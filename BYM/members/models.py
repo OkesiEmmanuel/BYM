@@ -26,7 +26,6 @@ class Member(models.Model):
     institution_attended_a = models.CharField(max_length=255, blank=True)
     institution_attended_b = models.CharField(max_length=255, blank=True)
     institution_attended_c = models.CharField(max_length=255, blank=True)
-    institution_attended_d = models.CharField(max_length=255, blank=True)
 
     course_of_study_a = models.CharField(max_length=255, blank=True)
     course_of_study_b = models.CharField(max_length=255, blank=True)

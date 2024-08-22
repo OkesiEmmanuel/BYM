@@ -1,0 +1,32 @@
+{% extends "members/base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Main Content Section -->
+<main class="container-fluid my-4">
+    <section class="row gx-4 gy-4 ">
+        <!-- Text Section -->
+        <div class="col-12 col-md-6 d-flex flex-column bg-white">
+            <div class="p-4 d-flex flex-column justify-content-center">
+                <h1 class="display-4">Welcome to BACHE <span class="text-danger">Youth Movement System</span></h1>
+                <p class="lead">Empowering the youth through education, skills, and community engagement.</p>
+            </div>
+            <div class="p-4">
+                <p class="mb-3">Get involved and make a difference!</p>
+                <a href="{% url 'member_form' %}" class="btn btn-dark rounded-pill btn-lg w-100">Join Us</a>
+            </div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="col-12 col-md-6   bg-white" style="border-radius: 30px;">
+            <div class="col-md-12">
+                <img src="{% static 'images/bym2.jpg' %}" alt="Youth Movement"
+                    class="img-fluid rounded-4 mt-3 w-100 shadow-sm" style="border-radius:30px; ">
+
+            </div>
+
+        </div>
+    </section>
+</main>
+
+{% endblock %}

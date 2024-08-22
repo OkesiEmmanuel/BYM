@@ -11,5 +11,14 @@ def member_form(request):
         form = MemberForm()
     return render(request, 'members/form.html', {'form': form})
 
+
 def success(request):
     return render(request, 'members/success.html')
+
+
+def home_view(request):
+    return render(request, 'members/home.html')
+
+
+def contact_us(request):
+    return render(request, 'members/contact.html')

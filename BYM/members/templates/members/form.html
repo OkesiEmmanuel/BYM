@@ -1,21 +1,164 @@
-{%load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'members/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BYM Member Registration</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
+{% block title %}Member Registration{% endblock %}
 
-<body>
-    <h1>BACE YOUTH MOVEMENT (BYM) DATABASE</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-</body>
+{% block content %}
+<div class="container m-5 p-4 ">
+    <h1 class="title text-center">Welcome to Bache <span class="text-danger">Youth Movement System</span></h1>
+    <p class="muted text-center">Please kindly fill the form below and submit your information...</p>
+</div>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card mb-3 shadow-lg rounded border border-white">
+                <div class="card-header text-center  bg-dark">
+                    <h5 class="text-white">Member Information Form</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                            <div class="row">
+                                <!-- Column 1 -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="email">E-mail</label>
+                                        {{ form.email }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="first_name">First Name</label>
+                                        {{ form.first_name }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="surname">Surname</label>
+                                        {{ form.surname }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="middle_name">Middle Name</label>
+                                        {{ form.middle_name }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date_of_birth">Date of Birth</label>
+                                        {{ form.date_of_birth }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="district">District</label>
+                                        {{ form.district }}
+                                    </div>
+                                </div>
+                            
+                                <!-- Column 2 -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="village">Village</label>
+                                        {{ form.village }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Gender</label>
+                                        {{ form.gender }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone_number">Phone Number</label>
+                                        {{ form.phone_number }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">Address</label>
+                                        {{ form.address }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disability">Disability</label>
+                                        {{ form.disability }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="marital_status">Marital Status</label>
+                                        {{ form.marital_status }}
+                                    </div>
+                                </div>
+                            
+                                <!-- Column 3 -->
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="institution_a">Institution Attended (a)</label>
+                                        {{ form.institution_attended_a }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="institution_b">Institution Attended (b)</label>
+                                        {{ form.institution_attended_b }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="institution_c">Institution Attended (c)</label>
+                                        {{ form.institution_attended_c }}
+                                    </div>
+                            
+                                    <div class="form-group">
+                                        <label for="course_a">Course of Study (a)</label>
+                                        {{ form.course_of_study_a }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="course_b">Course of Study (b)</label>
+                                        {{ form.course_of_study_b }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="course_c">Course of Study (c)</label>
+                                        {{ form.course_of_study_c }}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Another Row for Remaining Fields -->
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="qualification_a">Qualification (a)</label>
+                                        {{ form.qualification_a }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="qualification_b">Qualification (b)</label>
+                                        {{ form.qualification_b }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="qualification_c">Qualification (c)</label>
+                                        {{ form.qualification_c }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="skills_a">Skill (a)</label>
+                                        {{ form.skill_a }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="skills_b">Skill (b)</label>
+                                        {{ form.skill_b }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="skills_c">Skill (c)</label>
+                                        {{ form.skill_c }}
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="work_exp_a">Working Experience (a)</label>
+                                        {{ form.experience_a }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="work_exp_b">Working Experience (b)</label>
+                                        {{ form.experience_b }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="work_exp_c">Working Experience (c)</label>
+                                        {{ form.experience_c }}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class=" mt-4">
+                                <button type="submit" class="btn btn-dark rounded-pill btn-lg">Submit</button>
+                                <a href="/" class="btn btn-danger rounded-pill btn-lg ">Cancel</a>
+                            </div>
+                            </form>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
 
-</html>
+{% endblock %}
